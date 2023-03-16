@@ -1,0 +1,66 @@
+
+.cartridge-wrapper{
+    &.MuiBox-root{
+    padding: 50px 0;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    background-color: #607d8b;
+    }
+}
+.custom-container{
+    &.MuiGrid-root{
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    // padding: 0px 76px;
+    .cartridge-box{
+        display: flex;
+        flex-wrap: wrap;
+        button{
+            margin: 0 20px 20px 0;
+            width: 110px;
+            height: 110px;
+            background-color: white;
+            // padding: 9px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 300;
+        }
+    }
+    .cartridge-flavour{
+        button{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: #fff;
+            border-radius: 50%;
+            margin: 40px 20px;
+        }
+    }
+}
+}
+
+.bottom-div{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    .bottom-button{
+        width:100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+}
+.custom-card-div{
+    &.MuiCard-root{
+    min-width: 100px;
+    height: 100px;
+    text-align: center;
+    }
+    .custom-card-content{
+        text-align: center;
+    }
+    p{
+        width:50%
+    }
+}
