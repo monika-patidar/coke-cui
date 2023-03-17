@@ -1,12 +1,15 @@
 import ArrowBack from '@mui/icons-material/ArrowBack'
+import { Box } from '@mui/system'
 import React,{useState} from 'react'
 import CustomGrid from './CustomGrid'
+import PourButton from './PourButton'
 
 const RightScreen=(props:any)=>{
     const [rightChild,setrightChild]=useState(false)
     const [selectedBrand,setSelectedBrand]=useState([])
     const [childBeverages,setChildBeverages]=useState([])
-    const [pourDrink,setPourDrink]=useState({})
+    const [pourDrink,setPourDrink]=useState('')
+    const [isPouring,setIsPouring]=useState(false)
     
     const selectCartridge=(e:any,i:string)=>{
         let setBverages:any=[]
@@ -31,23 +34,30 @@ const RightScreen=(props:any)=>{
     const clearAll=()=>{
         setSelectedBrand([])
         setChildBeverages([])
-        setPourDrink({})
+        setPourDrink('')
         setrightChild(false)
+        setIsPouring(false)
      }
 
     return(<>
     {rightChild && <ArrowBack color="inherit" onClick={()=>clearAll()}/>}
-    <CustomGrid 
-        id='screen1'
-        className="cartridge-box"
-        screen={props.screen}
-        showChild={rightChild}
-        pourDrink={pourDrink}
-        products={rightChild && childBeverages?.length ? childBeverages : props.brands}
-        variant="contained"
-        selectBrand={(e: any, ind: string) => selectCartridge(e, ind)}       
-        addBeverages={(data:{})=>selectBeverages(data)}     
+    <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '90vh'}}>
+        <CustomGrid 
+            id='screen2'
+            className="cartridge-box"
+            screen={props.screen}
+            showChild={rightChild}
+            pourDrink={pourDrink}
+            startPouring={isPouring}
+            products={rightChild && childBeverages?.length ? childBeverages : props.brands}
+            variant="contained"
+            selectBrand={(e: any, ind: string) => selectCartridge(e, ind)}       
+            addBeverages={(data:{})=>selectBeverages(data)}     
         />
+        {pourDrink &&
+            <PourButton setPour={(state:boolean)=>setIsPouring(state)}/>
+        }
+    </Box>
     </>)
 }
 

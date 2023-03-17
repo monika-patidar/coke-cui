@@ -1,11 +1,12 @@
 
 .cartridge-wrapper{
+    min-height: 100vh;
     &.MuiBox-root{
-    padding: 50px 0;
+    padding-top: 10px;
     width: 100%;
-    // min-height: 70vh;
+    // height: 80%;
     margin: auto;
-    background-color: #607d8b;
+    background-color: #d9e5eb;
     }
 }
 .custom-container{
@@ -17,25 +18,30 @@
     .cartridge-box{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         button{
             margin: 0 20px 20px 0;
             width: 110px;
             height: 110px;
-            background-color: white;
+            background-color: #4e9269;
+            color: #fff;
             // padding: 9px;
             border-radius: 50%;
             font-size: 12px;
             font-weight: 300;
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 25px 0 rgba(0, 0, 0, 0.19);
         }
          .selectedClass{
-            opacity: 0.5;
+            // opacity: 0.5;
+            width:112px;
+            height:112px;
+            border:2px solid black;
         }
     }
     .cartridge-flavour{
         button{
             width: 100px;
             height: 100px;
-            background-color: red;
             color: #fff;
             border-radius: 50%;
             margin: 40px 20px;
@@ -43,16 +49,33 @@
     }
 }
 }
-
 .bottom-div{
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-evenly;
-    .bottom-button{
-        width:100px;
-        height: 100px;
+    // width:100%;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    .pourButton{
+        width: 120px;
+        height: 120px;
+        color: #fbf1f1;
         border-radius: 50%;
-    }
+        margin: auto;
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 25px 0 rgba(0, 0, 0, 0.19);
+        }
+        .start{
+            background-color:rgb(44 117 117); ;
+            &.MuiButton-root:hover{
+                background-color: rgb(44 117 117);
+            }
+        }
+        .stop{
+            background-color: rgb(163 37 37);
+            &.MuiButton-root:hover{
+                background-color: rgb(163 37 37);
+            }
+        }
+       
 }
 .custom-card-div{
     &.MuiCard-root{

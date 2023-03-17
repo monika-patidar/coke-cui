@@ -4,7 +4,7 @@ import { initMocks } from "./mockHandlers";
 import { default as CuiModel } from "../cui-model";
 
 describe("Cui", () => {
-  let cuiInfo;
+  let cuiInfo:any;
 
   afterEach(() => {
     clearHandlers();

@@ -9,42 +9,12 @@ import './cui.scss'
 interface Props {
 }
 
-interface AppProps{
-  className:string,
-  id:string,
-  products:{
-    brands:{
-        id:string,
-        name:string,
-        beverages:[]
-      }[],
-      beverages:{
-        id:string,
-        name:string,
-        icon:string
-      }[];
-  }[];
-  brandType:{
-    id:string,
-    name:string,
-    beverages:[]
-  }[],
-  beveragesType:{
-    id:string,
-    name:string,
-    icon:string
-  }[];
-  variant: "text" | "outlined" | "contained",
-  selectBrand: (e:any,i:string) => void;
-  selectBeverages:(id:string)=>void;
-}
-
-export const CuiView: React.FunctionComponent<PropsWithChildren<AppProps>> =
+export const CuiView: React.FunctionComponent<PropsWithChildren<Props>> =
   kosComponent(function CuiView() {
-    const { status, KosModelLoader } = useCuiModel();
-    const [products,setProducts]=useState([])
-    const [brands,setBrands]=useState([])
-    const [allbeverages,setAllBeverages]=useState([])
+    const { status, KosModelLoader }:any = useCuiModel();
+    const [products,setProducts]=useState<[]>()
+    const [brands,setBrands]=useState<{}[]>([])
+    const [allbeverages,setAllBeverages]=useState<{}[]>([])
 
     useEffect(()=>{
         if(status?.model?.data){

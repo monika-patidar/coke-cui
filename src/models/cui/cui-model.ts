@@ -40,17 +40,17 @@ class CuiModelImpl implements CuiModel {
   }
 
   async load(): Promise<void> {
-    log.debug("loading dispenser");
     try {
-      const response = await getCuis();
+      const response:any= await getCuis();
       kosAction(() => {
-        this.data = response || []
+        if(response){
+          this.data = response || []
+        }
       });
     } catch (e) {
       log.error(e);
       throw e;
     }
-    log.debug("loading cui");
   }
 
   async ready(): Promise<void> {

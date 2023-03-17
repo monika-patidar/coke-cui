@@ -9,12 +9,24 @@ const { getAll } = ServiceFactory.build({
 interface CuiResponse {
   id: string;
   name:string;
+  data:{
+    brands:{
+        id:string,
+        name:string,
+        beverages:[]
+      }[],
+      beverages:{
+        id:string,
+        name:string,
+        icon:string
+      }[];
+  }[];
 }
 /**
  * @category Service
  * Retrieves the initial cui data.
  */
 export const getCuis = async () => {
-  const response = await getAll<any>({});
+  const response = await getAll<CuiResponse>({});
   return response;
 };

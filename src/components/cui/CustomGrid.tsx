@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Grid,Box} from '@mui/material'
 import './cui.scss'
-const CustomGrid=(props:any)=>{debugger
+
+const CustomGrid=(props:any)=>{
     return(
     <Grid item>
          <Box className={props.className}>
@@ -13,6 +14,7 @@ const CustomGrid=(props:any)=>{debugger
                       className={props.pourDrink===item.id ? "selectedClass" : ""}
                       key={item.id} 
                       id={props.id} 
+                      disabled={props.startPouring}
                       onClick={(e)=>props.addBeverages(item)}>
                         <img src={`http://localhost:8081/system/brandset${item.icon}`} alt="my" width={"110px"} />
                     </Button>
